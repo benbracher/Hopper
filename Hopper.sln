@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hopper.WebMVC", "Hopper.WebMVC\Hopper.WebMVC.csproj", "{2C05AFF7-1A23-4179-8A07-2F55F4289115}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hopper.Data", "Hopper.Data\Hopper.Data.csproj", "{AD5D9C27-1254-484B-A1E8-6526F1AF8CE6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hopper.Models", "Hopper.Models\Hopper.Models.csproj", "{AFEB3666-7DC1-4E23-85B5-129CB22D57B7}"
@@ -15,16 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hopper.Services", "Hopper.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hopper.Tests", "Hopper.Tests\Hopper.Tests.csproj", "{3190B090-0A0D-47E7-9B37-30911A190CE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hopper.WebMVC", "Hopper.WebMVC\Hopper.WebMVC.csproj", "{717B6285-B525-47CA-9B79-6C2A2D7F3A2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2C05AFF7-1A23-4179-8A07-2F55F4289115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C05AFF7-1A23-4179-8A07-2F55F4289115}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C05AFF7-1A23-4179-8A07-2F55F4289115}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C05AFF7-1A23-4179-8A07-2F55F4289115}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AD5D9C27-1254-484B-A1E8-6526F1AF8CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AD5D9C27-1254-484B-A1E8-6526F1AF8CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD5D9C27-1254-484B-A1E8-6526F1AF8CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{3190B090-0A0D-47E7-9B37-30911A190CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3190B090-0A0D-47E7-9B37-30911A190CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3190B090-0A0D-47E7-9B37-30911A190CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717B6285-B525-47CA-9B79-6C2A2D7F3A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717B6285-B525-47CA-9B79-6C2A2D7F3A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717B6285-B525-47CA-9B79-6C2A2D7F3A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717B6285-B525-47CA-9B79-6C2A2D7F3A2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
