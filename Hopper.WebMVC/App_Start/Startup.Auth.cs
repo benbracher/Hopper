@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Hopper.WebMVC.Providers;
 using Hopper.WebMVC.Models;
+using Hopper.Data;
 
 namespace Hopper.WebMVC
 {

@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Hopper.WebMVC.Models;
+using Hopper.Data;
 
 namespace Hopper.WebMVC
 {

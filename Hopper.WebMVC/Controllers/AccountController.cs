@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using Hopper.WebMVC.Models;
 using Hopper.WebMVC.Providers;
 using Hopper.WebMVC.Results;
+using Hopper.Data;
 
 namespace Hopper.WebMVC.Controllers
 {
