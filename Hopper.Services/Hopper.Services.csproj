@@ -55,10 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransportService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hopper.Data\Hopper.Data.csproj">
+      <Project>{ad5d9c27-1254-484b-a1e8-6526f1af8ce6}</Project>
+      <Name>Hopper.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hopper.Models\Hopper.Models.csproj">
+      <Project>{afeb3666-7dc1-4e23-85b5-129cb22d57b7}</Project>
+      <Name>Hopper.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

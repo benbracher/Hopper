@@ -54,13 +54,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201811291539147_settingDataKeys.cs" />
+    <Compile Include="Migrations\201811291539147_settingDataKeys.Designer.cs">
+      <DependentUpon>201811291539147_settingDataKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291547593_settingDataKeys1.cs" />
+    <Compile Include="Migrations\201811291547593_settingDataKeys1.Designer.cs">
+      <DependentUpon>201811291547593_settingDataKeys1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291604482_updatedRideDbAddedTransportDb.cs" />
+    <Compile Include="Migrations\201811291604482_updatedRideDbAddedTransportDb.Designer.cs">
+      <DependentUpon>201811291604482_updatedRideDbAddedTransportDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811292205550_addedConnectionDb.cs" />
+    <Compile Include="Migrations\201811292205550_addedConnectionDb.Designer.cs">
+      <DependentUpon>201811292205550_addedConnectionDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ride.cs" />
     <Compile Include="Transport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811291539147_settingDataKeys.resx">
+      <DependentUpon>201811291539147_settingDataKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291547593_settingDataKeys1.resx">
+      <DependentUpon>201811291547593_settingDataKeys1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291604482_updatedRideDbAddedTransportDb.resx">
+      <DependentUpon>201811291604482_updatedRideDbAddedTransportDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811292205550_addedConnectionDb.resx">
+      <DependentUpon>201811292205550_addedConnectionDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
