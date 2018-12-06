@@ -57,5 +57,39 @@ namespace Hopper.Services
                 return query.ToArray();
             }
         }
+
+        public TransportDetail GetTransportById(int transportId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Transports
+                        .Single(e => e.TransportId == transportId && e.OwnerId == _userId);
+                return
+                    new TransportDetail
+                    {
+                        TransportId = entity.TransportId,
+                        TransportAnimal = entity.TransportAnimal,
+                        Age = entity.Age,
+                        Color = entity.Color
+                    };
+            }
+        }
+
+        public bool DeleteTransport(int transportId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Transports
+                        .Single(e => e.TransportId == transportId && e.OwnerId == _userId);
+
+                ctx.Transports.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

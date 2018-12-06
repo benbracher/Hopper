@@ -40,6 +40,7 @@ namespace Hopper.Data
 
         public DbSet<Ride> Rides { get; set; }
         public DbSet<Transport> Transports { get; set; }
+        public DbSet<Connection> Connections { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

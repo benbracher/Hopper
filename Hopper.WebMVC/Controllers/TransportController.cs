@@ -36,10 +36,44 @@ namespace Hopper.WebMVC.Controllers
 
             if (service.CreateTransport(model))
             {
+                TempData["SaveResult"] = "Your transport was created.";
                 return RedirectToAction("Index");
             }
 
+            ModelState.AddModelError("", "Transport could not be created");
+
             return View(model);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateTransportService();
+            var model = svc.GetTransportById(id);
+
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateTransportService();
+            var model = svc.GetTransportById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateTransportService();
+
+            service.DeleteTransport(id);
+
+            TempData["SaveResult"] = "Your transport was deleted";
+
+            return RedirectToAction("Index");
         }
 
         private TransportService CreateTransportService()

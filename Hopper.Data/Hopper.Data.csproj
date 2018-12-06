@@ -37,11 +37,26 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.36.1\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.36.1\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.36.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.36.1\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMaps, Version=7.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleMapControl.7.4.2\lib\net40\GoogleMaps.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -72,6 +87,38 @@
     <Compile Include="Migrations\201811292205550_addedConnectionDb.Designer.cs">
       <DependentUpon>201811292205550_addedConnectionDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812051630399_rideReworked.cs" />
+    <Compile Include="Migrations\201812051630399_rideReworked.Designer.cs">
+      <DependentUpon>201812051630399_rideReworked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812052023341_rideUpdated.cs" />
+    <Compile Include="Migrations\201812052023341_rideUpdated.Designer.cs">
+      <DependentUpon>201812052023341_rideUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812052030169_rideUpdated1.cs" />
+    <Compile Include="Migrations\201812052030169_rideUpdated1.Designer.cs">
+      <DependentUpon>201812052030169_rideUpdated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812052140078_updatedData.cs" />
+    <Compile Include="Migrations\201812052140078_updatedData.Designer.cs">
+      <DependentUpon>201812052140078_updatedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061516157_updatedDt.cs" />
+    <Compile Include="Migrations\201812061516157_updatedDt.Designer.cs">
+      <DependentUpon>201812061516157_updatedDt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061539088_updatedDtTwo.cs" />
+    <Compile Include="Migrations\201812061539088_updatedDtTwo.Designer.cs">
+      <DependentUpon>201812061539088_updatedDtTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812062042330_updatedUserTable.cs" />
+    <Compile Include="Migrations\201812062042330_updatedUserTable.Designer.cs">
+      <DependentUpon>201812062042330_updatedUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812062123063_updatedUserTableTwo.cs" />
+    <Compile Include="Migrations\201812062123063_updatedUserTableTwo.Designer.cs">
+      <DependentUpon>201812062123063_updatedUserTableTwo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ride.cs" />
@@ -93,6 +140,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811292205550_addedConnectionDb.resx">
       <DependentUpon>201811292205550_addedConnectionDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051630399_rideReworked.resx">
+      <DependentUpon>201812051630399_rideReworked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812052023341_rideUpdated.resx">
+      <DependentUpon>201812052023341_rideUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812052030169_rideUpdated1.resx">
+      <DependentUpon>201812052030169_rideUpdated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812052140078_updatedData.resx">
+      <DependentUpon>201812052140078_updatedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061516157_updatedDt.resx">
+      <DependentUpon>201812061516157_updatedDt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061539088_updatedDtTwo.resx">
+      <DependentUpon>201812061539088_updatedDtTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812062042330_updatedUserTable.resx">
+      <DependentUpon>201812062042330_updatedUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812062123063_updatedUserTableTwo.resx">
+      <DependentUpon>201812062123063_updatedUserTableTwo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
