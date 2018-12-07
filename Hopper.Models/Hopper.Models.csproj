@@ -66,11 +66,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionCreate.cs" />
+    <Compile Include="ConnectionDetailsItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RideCreate.cs" />
+    <Compile Include="RideInfo.cs" />
     <Compile Include="RideList.cs" />
     <Compile Include="TransportCreate.cs" />
     <Compile Include="TransportDetail.cs" />
+    <Compile Include="TransportInfo.cs" />
     <Compile Include="TransportListItem.cs" />
   </ItemGroup>
   <ItemGroup>

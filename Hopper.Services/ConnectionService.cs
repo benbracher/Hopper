@@ -37,7 +37,7 @@ namespace Hopper.Services
                 return
                     new ConnectionDetailsItem
                     {
-                        ConnectionId = entity.Transport.TransportId,
+                        TransportId = entity.Transport.TransportId,
                         RideId = entity.Ride.RideId
                     };
             }

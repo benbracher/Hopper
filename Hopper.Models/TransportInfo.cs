@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Hopper.Models
 {
-    public class ConnectionDetailsItem
+    public class TransportInfo
     {
-        public int RideId { get; set; }
         public int TransportId { get; set; }
-
-        public RideInfo Ride { get; set; }
-        public TransportInfo Transport { get; set; }
+        public Guid OwnerId { get; set; }
+        public AnimalType TransportAnimal { get; set; }
+        public int Age { get; set; }
+        public string Color { get; set; }
     }
 }
