@@ -66,5 +66,74 @@ namespace Hopper.Services
                 return query.ToArray();
             }
         }
+
+        public ConnectionDetailsItem GetRide()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                //Get RideInfoList
+                var rideInfoList =
+                    ctx
+                        .Rides
+                        .Where(e => e.OwnerId == _userId)
+                        .Select(
+                            e =>
+                                new RideInfo
+                                {
+                                    RideId = e.RideId,
+                                    StartAddress = e.StartAddress,
+                                    StartCity = e.StartCity,
+                                    StartState = e.StartState,
+                                    EndAddress = e.EndAddress,
+                                    EndCity = e.EndCity,
+                                    EndState = e.EndState,
+                                    RideDate = e.RideDate
+                                }
+                        ).ToList();
+
+                //Check if doesn't have ride, returns empty model if n/a
+                if (rideInfoList.Count == 0)
+                {
+                    return new ConnectionDetailsItem();
+                }
+
+                //Grab ride from list, check connection table
+                var rideInfo = rideInfoList[0];
+                var connectionInfoList =
+                    ctx
+                        .Connections
+                        .Where(c => c.RideId == rideInfo.RideId)
+                        .ToList();
+
+                //If connection, get transport and add to model, return model
+                if (connectionInfoList.Count == 1)
+                {
+                    var transport =
+                        ctx
+                            .Transports
+                            .Single(t => t.TransportId == connectionInfoList[0].TransportId);
+
+                    var transportInfo = new TransportInfo
+                    {
+                        TransportId = transport.TransportId,
+                        TransportAnimal = transport.TransportAnimal,
+                        Age = transport.Age,
+                        Color = transport.Color,
+                        OwnerId = transport.OwnerId
+                    };
+
+                    return new ConnectionDetailsItem
+                    {
+                        Ride = rideInfo,
+                        Transport = transportInfo,
+                    };
+                }
+
+                return new ConnectionDetailsItem
+                {
+                    Ride = rideInfo
+                };
+            }
+        }
     }
 }

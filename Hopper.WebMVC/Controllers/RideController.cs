@@ -17,7 +17,7 @@ namespace Hopper.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RideService(userId);
-            var model = service.GetRides();
+            var model = service.GetRide();
 
             return View(model);
         }
