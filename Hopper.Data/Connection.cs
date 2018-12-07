@@ -12,7 +12,6 @@ namespace Hopper.Data
         [Key]
         public int ConnectionId { get; set; }
 
-        public Guid OwnerId { get; set; }
         public int TransportId { get; set; }
         public int RideId { get; set; }
 
