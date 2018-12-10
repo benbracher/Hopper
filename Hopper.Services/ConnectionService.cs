@@ -9,8 +9,15 @@ using System.Threading.Tasks;
 
 namespace Hopper.Services
 {
-    class ConnectionService : IConnectionService
+    public class ConnectionService : IConnectionService
     {
+        private readonly Guid _userId;
+
+        public ConnectionService(Guid userId)
+        {
+            _userId = userId;
+        }
+
         public bool CreateConnection(ConnectionCreate model)
         {
             var connection = new Connection
