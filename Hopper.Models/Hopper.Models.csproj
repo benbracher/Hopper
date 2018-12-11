@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="ConnectionCreate.cs" />
     <Compile Include="ConnectionDetailsItem.cs" />
+    <Compile Include="ConnectionListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RideCreate.cs" />
     <Compile Include="RideInfo.cs" />

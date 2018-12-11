@@ -41,6 +41,7 @@ namespace Hopper.Services
                     ctx
                         .Connections
                         .Single(e => e.ConnectionId == id);
+                    //.Find(id);
                 return
                     new ConnectionDetailsItem
                     {
@@ -48,6 +49,17 @@ namespace Hopper.Services
                         RideId = entity.Ride.RideId
                     };
             }
+        }
+
+        public ConnectionListItem GetPotentialConnectionData(IEnumerable<TransportListItem> transports, int rideId)
+        {
+            var x =
+                new ConnectionListItem
+                {
+                    RideId = rideId,
+                    Transports = transports
+                };
+            return x;
         }
     }
 }

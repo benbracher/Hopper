@@ -258,10 +258,10 @@
     <Content Include="Views\Transport\Delete.cshtml" />
     <Content Include="Views\Ride\Index.cshtml" />
     <Content Include="Views\Ride\Create.cshtml" />
+    <Content Include="Views\Connection\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Connection\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

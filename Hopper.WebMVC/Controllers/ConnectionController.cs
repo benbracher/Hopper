@@ -9,15 +9,17 @@ using System.Web.Mvc;
 
 namespace Hopper.WebMVC.Controllers
 {
+    
+
     public class ConnectionController : Controller
     {
 
         // GET: Connection
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ConnectionService(userId);
-            //var model = service.GetConnectionById();
+            var model = service.GetConnectionById(id);
 
             return View();
         }
@@ -43,6 +45,20 @@ namespace Hopper.WebMVC.Controllers
             
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Create(ConnectionListItem model)
+        {
+            var connectionService = CreateConnectionService();
+            var rideService = CreateRideService();
+            var transportService = CreateTransportService();
+
+            var rideId = rideService.GetRide().RideId;
+            var transports = transportService.GetTransports();
+
+           var newModel = connectionService.GetPotentialConnectionData(transports, rideId);
+
+            return View(newModel);
         }
 
         private ConnectionService CreateConnectionService()
