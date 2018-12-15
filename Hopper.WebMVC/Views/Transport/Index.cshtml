@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("+", "Create")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -21,38 +21,17 @@
     </div>
 }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TransportAnimal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Age)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TransportAnimal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TransportId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TransportId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TransportId })
-            </td>
-        </tr>
-    }
-
-</table>
+    <ol>
+        @foreach (var item in Model)
+        {
+            <li>
+            <img src="~/Assets/Images/@(item.TransportAnimal).png" />
+                <br />
+            @Html.DisplayFor(modelItem => item.TransportAnimal)
+                <br />
+            @Html.DisplayFor(modelItem => item.Age)
+                <br />
+            @Html.DisplayFor(modelItem => item.Color)
+            </li>
+        }
+    </ol>

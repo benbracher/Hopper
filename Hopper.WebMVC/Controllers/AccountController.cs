@@ -138,7 +138,7 @@ namespace Hopper.WebMVC.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(bool isDriver)
         {
             return View();
         }
@@ -154,7 +154,7 @@ namespace Hopper.WebMVC.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Age = model.Age, IsDriver = model.IsDriver};
                 var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                if (result.Succeeded && model.IsDriver)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
@@ -164,7 +164,11 @@ namespace Hopper.WebMVC.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Connect", "Connection");
+                }
+                else if (result.Succeeded && !model.IsDriver)
+                {
+                    return RedirectToAction("Create", "Ride");
                 }
                 AddErrors(result);
             }

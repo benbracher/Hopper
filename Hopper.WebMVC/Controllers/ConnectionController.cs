@@ -9,8 +9,8 @@ using System.Web.Mvc;
 
 namespace Hopper.WebMVC.Controllers
 {
-    
 
+    [Authorize]
     public class ConnectionController : Controller
     {
 
@@ -47,7 +47,12 @@ namespace Hopper.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Create(ConnectionListItem model)
+        //public ActionResult Connect()
+        //{
+        //    return View();
+        //}
+
+        public ActionResult Connect(ConnectionListItem model)
         {
             var connectionService = CreateConnectionService();
             var rideService = CreateRideService();

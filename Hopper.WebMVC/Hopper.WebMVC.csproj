@@ -197,6 +197,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\driver-register-logo.jpg" />
+    <Content Include="Assets\Images\frog-king-icon.png" />
+    <Content Include="Assets\Images\grasshopper-transport-icon.png" />
+    <Content Include="Assets\Images\kangaroo-transport-icon.png" />
+    <Content Include="Assets\Images\passenger-register-logo.jpg" />
+    <Content Include="Assets\Images\rabbit-transport-icon.png" />
+    <Content Include="Assets\Images\spider-transport-icon.png" />
+    <Content Include="Assets\Images\toad-logo-icon.png" />
+    <Content Include="Assets\Images\toad-main-large.jpg" />
+    <Content Include="Assets\Images\toad-transport-icon.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -207,6 +217,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\Fonts\QanelasSoftDEMO-ExtraBold.otf" />
+    <Content Include="Assets\Fonts\QanelasSoftDEMO-UltraLight.otf" />
+    <None Include="Properties\PublishProfiles\HopperWebMVC - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -218,6 +231,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -258,7 +272,7 @@
     <Content Include="Views\Transport\Delete.cshtml" />
     <Content Include="Views\Ride\Index.cshtml" />
     <Content Include="Views\Ride\Create.cshtml" />
-    <Content Include="Views\Connection\Create.cshtml" />
+    <Content Include="Views\Connection\Connect.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

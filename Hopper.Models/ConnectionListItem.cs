@@ -11,5 +11,7 @@ namespace Hopper.Models
     {
         public IEnumerable<TransportListItem> Transports { get; set; }
         public int RideId { get; set; }
+
+        public RideInfo Ride { get; set; }
     }
 }

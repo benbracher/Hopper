@@ -1,4 +1,4 @@
-﻿@model Hopper.Models.RideList
+﻿@model Hopper.Models.ConnectionDetailsItem
 
 @{
     ViewBag.Title = "Index";
@@ -10,28 +10,3 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@foreach (var item in Model)
-{
-    @*<div class="col-lg-4" style="padding: 10px">
-        <div class="mapwrap">
-            <h1 style="color: white;">Ride @Html.DisplayFor(modelItem => item.RideId)</h1>
-            <p style="color: white; font-size:17px">@Html.DisplayFor(modelItem => item.Address), @Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.State)</p>
-            @{
-                string completed = item.Address.Replace(' ', '+');
-                string fullAddress = "https://maps.googleapis.com/maps/api/staticmap?center=" + completed + "&key=AIzaSyBGYp_pUm68X5-jz-pSOwGIw_mqCdJtSy4";
-            }
-            <img src=@fullAddress>*@
-    <br />
-    <br />
-    @*@Html.ActionLink("Edit", "Edit", new { id = item.RideId }, new { @class = "text" }) |*@
-    @*@Html.ActionLink("Details", "Details", new { id = item.RideId }, new { @class = "text" }) |*@
-    @*@Html.ActionLink("Delete", "Delete", new { id = item.RideId }, new { @class = "text" })*@
-    @*</div>
-        </div>*@
-}
-
-
-@*@if (Model.Transport != null)
-{
-    @Html.DisplayFor(model => model.AnimalType)
-}*@
