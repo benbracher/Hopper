@@ -1,12 +1,45 @@
 ﻿@model Hopper.Models.ConnectionDetailsItem
 
 @{
+    /**/
+
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Ride Details:</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="col-lg-6">
 
+    <div id="googleMap" style="width:75%;height:400px;"></div>
+
+</div>
+
+<div class="col-lg-6">
+    <p>Starting Address: @Model.Ride.StartAddress, @Model.Ride.StartCity, @Model.Ride.StartState</p>
+    <p>Ending Address: @Model.Ride.EndAddress, @Model.Ride.EndCity, @Model.Ride.EndState</p>
+    <p>Distance: </p>
+    <p>Cost: </p>
+    @if (Model.TransportId != 0)
+    {
+        <p>Driver: @Model.Transport.OwnerId</p>
+        <p>Animal: @Model.Transport.TransportAnimal</p>
+    }
+</div>
+
+<script>
+    function myMap() {
+        var mapProp = {
+            center: new google.maps.LatLng(41.850033, -87.6500523),
+            zoom: 5,
+        };
+        var startAddress = { lat: 41.850033, lng: -87.6500523 }
+        var endAddress = { lat: 39.767777, lng: -86.156502 }
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({ position: startAddress, map: map });
+        var marker2 = new google.maps.Marker({ position: endAddress, map: map });
+
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGYp_pUm68X5-jz-pSOwGIw_mqCdJtSy4&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBGYp_pUm68X5-jz-pSOwGIw_mqCdJtSy4"></script>

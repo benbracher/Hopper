@@ -13,5 +13,6 @@ namespace Hopper.Models
         public int RideId { get; set; }
 
         public RideInfo Ride { get; set; }
+        public Transport Transport { get; set; }
     }
 }
