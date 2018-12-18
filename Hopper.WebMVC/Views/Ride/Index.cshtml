@@ -8,6 +8,9 @@
 
 <h2>Ride Details:</h2>
 
+@{string fullStartAddress = @Model.Ride.StartAddress + " " + @Model.Ride.StartCity + " " + @Model.Ride.StartState;}
+@{string fullEndAddress = @Model.Ride.EndAddress + " " + @Model.Ride.EndCity + " " + @Model.Ride.EndState;}
+
 <div class="col-lg-6">
 
     <div id="googleMap" style="width:75%;height:400px;"></div>
@@ -15,8 +18,9 @@
 </div>
 
 <div class="col-lg-6">
-    <p>Starting Address: @Model.Ride.StartAddress, @Model.Ride.StartCity, @Model.Ride.StartState</p>
-    <p>Ending Address: @Model.Ride.EndAddress, @Model.Ride.EndCity, @Model.Ride.EndState</p>
+    <p>Starting Address: @Html.Raw(fullStartAddress)</p>
+    <p>Ending Address: @Html.Raw(fullEndAddress)</p>
+    <p>Date: @Model.Ride.RideDate</p>
     <p>Distance: </p>
     <p>Cost: </p>
     @if (Model.TransportId != 0)
@@ -42,4 +46,4 @@
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGYp_pUm68X5-jz-pSOwGIw_mqCdJtSy4&callback=myMap"></script>
-<script src="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBGYp_pUm68X5-jz-pSOwGIw_mqCdJtSy4"></script>
+@*<script src="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBGYp_pUm68X5-jz-pSOwGIw_mqCdJtSy4"></script>*@

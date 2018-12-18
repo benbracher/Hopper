@@ -42,9 +42,7 @@ namespace Hopper.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RideService(userId);
 
-            
-
-            return RedirectToAction("Index");
+            return RedirectToAction("Connect");
         }
 
         //public ActionResult Connect()
@@ -52,18 +50,37 @@ namespace Hopper.WebMVC.Controllers
         //    return View();
         //}
 
-        public ActionResult Connect(ConnectionListItem model)
+        public ActionResult Connect(ConnectionDetailsItem model)
         {
             var connectionService = CreateConnectionService();
             var rideService = CreateRideService();
             var transportService = CreateTransportService();
-
-            var rideId = rideService.GetRide().RideId;
             var transports = transportService.GetTransports();
 
-           var newModel = connectionService.GetPotentialConnectionData(transports, rideId);
+            ViewBag.TransportId = new SelectList(transports, "TransportId", "TransportAnimal");
+
+            var ride = rideService.GetRide().Ride;
+
+           var newModel = connectionService.GetPotentialConnectionData(transports, ride);
 
             return View(newModel);
+        }
+        
+        [HttpPost]
+        public ActionResult Connect(ConnectionCreate model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var connectionService = CreateConnectionService();
+
+            if (connectionService.CreateConnection(model))
+            {
+                return RedirectToAction("Index", "Ride");
+            }
+
+            ModelState.AddModelError("", "Connection could not be created.");
+
+            return View(model);
         }
 
         private ConnectionService CreateConnectionService()

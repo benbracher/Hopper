@@ -75,7 +75,6 @@ namespace Hopper.Services
                 var rideInfoList =
                     ctx
                         .Rides
-                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new RideInfo
@@ -105,18 +104,21 @@ namespace Hopper.Services
                         .Where(c => c.RideId == rideInfo.RideId)
                         .ToList();
 
+                var thing = connectionInfoList[0].TransportId;
+
                 //If connection, get transport and add to model, return model
                 if (connectionInfoList.Count == 1)
                 {
                     var transport =
                         ctx
                             .Transports
-                            .Single(t => t.TransportId == connectionInfoList[0].TransportId);
+                            .Single(t => t.TransportId == thing);
 
                     var transportInfo = new TransportInfo
                     {
                         TransportId = transport.TransportId,
-                        TransportAnimal = transport.TransportAnimal,
+                        //todo: changed
+                        TransportAnimal = transport.TransportAnimal.ToString(),
                         Age = transport.Age,
                         Color = transport.Color,
                         OwnerId = transport.OwnerId
@@ -131,7 +133,9 @@ namespace Hopper.Services
 
                 return new ConnectionDetailsItem
                 {
-                    Ride = rideInfo
+                    Ride = rideInfo,
+                    RideId = rideInfo.RideId
+
                 };
             }
         }

@@ -51,13 +51,15 @@ namespace Hopper.Services
             }
         }
 
-        public ConnectionListItem GetPotentialConnectionData(IEnumerable<TransportListItem> transports, int rideId)
+        public ConnectionDetailsItem GetPotentialConnectionData(IEnumerable<TransportListItem> transports, RideInfo ride)
         {
             var x =
-                new ConnectionListItem
+                new ConnectionDetailsItem
                 {
-                    RideId = rideId,
-                    Transports = transports
+                    Ride = ride,
+                    Transports = transports,
+                    RideId = ride.RideId
+
                 };
             return x;
         }

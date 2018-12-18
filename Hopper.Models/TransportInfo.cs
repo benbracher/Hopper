@@ -11,7 +11,8 @@ namespace Hopper.Models
     {
         public int TransportId { get; set; }
         public Guid OwnerId { get; set; }
-        public AnimalType TransportAnimal { get; set; }
+        //todo: changed
+        public string TransportAnimal { get; set; }
         public int Age { get; set; }
         public string Color { get; set; }
     }
